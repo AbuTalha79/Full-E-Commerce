@@ -22,6 +22,10 @@ var blogSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    isDisliked:{
+        type: Boolean,
+        default: false,
+    },
     likes:[
         {
             type: mongoose.Schema.Types.ObjectId,

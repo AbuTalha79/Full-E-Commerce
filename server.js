@@ -16,15 +16,24 @@ const authRouter = require('./routers/authRouters');
 const userRouters= require('./routers/userRouter');
 const productRouter = require("./routers/productRoute");
 const blogRouter = require("./routers/blogRouter");
+const categoryRouter = require("./routers/procategoryRouter");
+const blogCategoryRouter = require("./routers/blogCatRouter");
+const brandRouter = require("./routers/brandRouter");
+const couponRouter = require("./routers/couponRouter");
+
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieparser());
-app.use(morgan("tiny"))
+app.use(morgan("tiny"));
 app.use("/api/v1/users",authRouter);
 app.use("/api/v1/users",userRouters);
 app.use("/api/v1/product", productRouter);
 app.use("/api/v1/blog", blogRouter);
+app.use("/api/v1/productcategory", categoryRouter);
+app.use("/api/v1/blogcategory", blogCategoryRouter);
+app.use("/api/v1/brand", brandRouter);
+app.use("/api/v1/coupon", couponRouter);
 
 
 app.get("/",(req, res)=>{

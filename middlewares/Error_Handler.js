@@ -6,4 +6,4 @@ const errorHandler = (err,req,res,next)=>{
         stack:err?.stack
     })
 };
-module.exports=errorHandler
+module.exports = errorHandler
